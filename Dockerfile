@@ -7,7 +7,7 @@
 #
 # アプリ側の対応プリセット: モデル編集 →「RunPod ComfyUI…」→「Qwen-Image 2.1 編集（自前イメージ）」
 
-FROM runpod/worker-comfyui:5.11.0-base
+FROM runpod/worker-comfyui:5.10.0-base
 
 ARG COMFYUI_VERSION=0.45.0
 
