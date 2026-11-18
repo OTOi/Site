@@ -45,6 +45,12 @@ RUN comfy model download \
       --url https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors \
       --relative-path models/vae --filename qwen_image_2.1_vae_bf16.safetensors
 
+# 通常版（非Turbo）の本体。Turbo より遅いが、指示への忠実さ・画質を優先したいとき用（+7.3GB）。
+# アプリのプリセット「Qwen-Image 2.1 編集・通常版（自前イメージ）」が使う。
+RUN comfy model download \
+      --url https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors \
+      --relative-path models/diffusion_models --filename qwen_image_2.1_int8_convrot.safetensors
+
 # GitHub 連携のチェック用 handler（実行時は公式の /handler.py を使うので、別名で置くだけ）
 COPY handler.py /rp_handler.py
 
