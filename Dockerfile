@@ -45,4 +45,7 @@ RUN comfy model download \
       --url https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/vae/qwen_image_2.1_vae_bf16.safetensors \
       --relative-path models/vae --filename qwen_image_2.1_vae_bf16.safetensors
 
+# GitHub 連携のチェック用 handler（実行時は公式の /handler.py を使うので、別名で置くだけ）
+COPY handler.py /rp_handler.py
+
 CMD ["/start.sh"]
